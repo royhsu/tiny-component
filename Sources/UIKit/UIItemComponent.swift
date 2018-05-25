@@ -1,6 +1,6 @@
 //
 //  UIItemComponent.swift
-//  TinyKit
+//  TinyComponent
 //
 //  Created by Roy Hsu on 16/02/2018.
 //  Copyright © 2018 TinyWorld. All rights reserved.

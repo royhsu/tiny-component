@@ -1,6 +1,6 @@
 //
 //  UIItemComponentTests.swift
-//  TinyKitTests
+//  TinyComponentTests
 //
 //  Created by Roy Hsu on 16/02/2018.
 //  Copyright © 2018 TinyWorld. All rights reserved.
