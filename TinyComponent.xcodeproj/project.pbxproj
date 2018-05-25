@@ -14,6 +14,9 @@
 		B0FE389F20B80C6500FB2E9A /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE389E20B80C6500FB2E9A /* Component.swift */; };
 		B0FE38A120B80C9C00FB2E9A /* ViewRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */; };
 		B0FE38A320B80CB900FB2E9A /* UIView+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38A220B80CB900FB2E9A /* UIView+View.swift */; };
+		B0FE38A720B80E6600FB2E9A /* CollectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */; };
+		B0FE38AF20B8128300FB2E9A /* UIItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */; };
+		B0FE38B320B8138F00FB2E9A /* UIItemComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 		B0FE389E20B80C6500FB2E9A /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRenderable.swift; sourceTree = "<group>"; };
 		B0FE38A220B80CB900FB2E9A /* UIView+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+View.swift"; sourceTree = "<group>"; };
+		B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionComponent.swift; sourceTree = "<group>"; };
+		B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIItemComponent.swift; sourceTree = "<group>"; };
+		B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIItemComponentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +85,10 @@
 		B0FE388120B8068D00FB2E9A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */,
 				B0FE389C20B809C800FB2E9A /* ComponentContentMode.swift */,
 				B0FE389E20B80C6500FB2E9A /* Component.swift */,
-				B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */,
+				B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */,
 				B0FE38A420B80D1C00FB2E9A /* UIKit */,
 				B0FE388220B8068D00FB2E9A /* TinyComponent.h */,
 				B0FE388320B8068D00FB2E9A /* Info.plist */,
@@ -93,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FE389720B807BA00FB2E9A /* ComponentContentModeTests.swift */,
+				B0FE38B220B8138700FB2E9A /* UIKit */,
 				B0FE389820B807BA00FB2E9A /* Info.plist */,
 			);
 			path = Tests;
@@ -102,6 +110,15 @@
 			isa = PBXGroup;
 			children = (
 				B0FE38A220B80CB900FB2E9A /* UIView+View.swift */,
+				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B0FE38B220B8138700FB2E9A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -236,6 +253,8 @@
 				B0FE38A320B80CB900FB2E9A /* UIView+View.swift in Sources */,
 				B0FE389D20B809C800FB2E9A /* ComponentContentMode.swift in Sources */,
 				B0FE389F20B80C6500FB2E9A /* Component.swift in Sources */,
+				B0FE38A720B80E6600FB2E9A /* CollectionComponent.swift in Sources */,
+				B0FE38AF20B8128300FB2E9A /* UIItemComponent.swift in Sources */,
 				B0FE38A120B80C9C00FB2E9A /* ViewRenderable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FE38B320B8138F00FB2E9A /* UIItemComponentTests.swift in Sources */,
 				B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
