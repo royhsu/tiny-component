@@ -17,6 +17,11 @@
 		B0FE38A720B80E6600FB2E9A /* CollectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */; };
 		B0FE38AF20B8128300FB2E9A /* UIItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */; };
 		B0FE38B320B8138F00FB2E9A /* UIItemComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */; };
+		B0FE38B520B8553200FB2E9A /* UITableViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38B420B8553200FB2E9A /* UITableViewBridge.swift */; };
+		B0FE38B920B8563D00FB2E9A /* ListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38B820B8563D00FB2E9A /* ListComponent.swift */; };
+		B0FE38BC20B857D100FB2E9A /* UIView+Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38BB20B857D000FB2E9A /* UIView+Subview.swift */; };
+		B0FE38C020B85CF600FB2E9A /* UIListComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38BD20B85CEF00FB2E9A /* UIListComponentTests.swift */; };
+		B0FE38C120B85D8C00FB2E9A /* UIListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE38B620B855F700FB2E9A /* UIListComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,11 @@
 		B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionComponent.swift; sourceTree = "<group>"; };
 		B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIItemComponent.swift; sourceTree = "<group>"; };
 		B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIItemComponentTests.swift; sourceTree = "<group>"; };
+		B0FE38B420B8553200FB2E9A /* UITableViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewBridge.swift; sourceTree = "<group>"; };
+		B0FE38B620B855F700FB2E9A /* UIListComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIListComponent.swift; sourceTree = "<group>"; };
+		B0FE38B820B8563D00FB2E9A /* ListComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListComponent.swift; sourceTree = "<group>"; };
+		B0FE38BB20B857D000FB2E9A /* UIView+Subview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subview.swift"; sourceTree = "<group>"; };
+		B0FE38BD20B85CEF00FB2E9A /* UIListComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIListComponentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +95,13 @@
 		B0FE388120B8068D00FB2E9A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE38BA20B8576200FB2E9A /* Utilities */,
+				B0FE38A420B80D1C00FB2E9A /* UIKit */,
 				B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */,
 				B0FE389C20B809C800FB2E9A /* ComponentContentMode.swift */,
 				B0FE389E20B80C6500FB2E9A /* Component.swift */,
 				B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */,
-				B0FE38A420B80D1C00FB2E9A /* UIKit */,
+				B0FE38B820B8563D00FB2E9A /* ListComponent.swift */,
 				B0FE388220B8068D00FB2E9A /* TinyComponent.h */,
 				B0FE388320B8068D00FB2E9A /* Info.plist */,
 			);
@@ -110,7 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				B0FE38A220B80CB900FB2E9A /* UIView+View.swift */,
+				B0FE38B420B8553200FB2E9A /* UITableViewBridge.swift */,
 				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
+				B0FE38B620B855F700FB2E9A /* UIListComponent.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -119,8 +133,17 @@
 			isa = PBXGroup;
 			children = (
 				B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */,
+				B0FE38BD20B85CEF00FB2E9A /* UIListComponentTests.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B0FE38BA20B8576200FB2E9A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE38BB20B857D000FB2E9A /* UIView+Subview.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,9 +276,13 @@
 				B0FE38A320B80CB900FB2E9A /* UIView+View.swift in Sources */,
 				B0FE389D20B809C800FB2E9A /* ComponentContentMode.swift in Sources */,
 				B0FE389F20B80C6500FB2E9A /* Component.swift in Sources */,
+				B0FE38BC20B857D100FB2E9A /* UIView+Subview.swift in Sources */,
 				B0FE38A720B80E6600FB2E9A /* CollectionComponent.swift in Sources */,
 				B0FE38AF20B8128300FB2E9A /* UIItemComponent.swift in Sources */,
+				B0FE38B920B8563D00FB2E9A /* ListComponent.swift in Sources */,
 				B0FE38A120B80C9C00FB2E9A /* ViewRenderable.swift in Sources */,
+				B0FE38B520B8553200FB2E9A /* UITableViewBridge.swift in Sources */,
+				B0FE38C120B85D8C00FB2E9A /* UIListComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FE38B320B8138F00FB2E9A /* UIItemComponentTests.swift in Sources */,
+				B0FE38C020B85CF600FB2E9A /* UIListComponentTests.swift in Sources */,
 				B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

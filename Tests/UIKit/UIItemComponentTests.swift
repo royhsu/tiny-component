@@ -14,7 +14,7 @@ import XCTest
 
 internal final class UIItemComponentTests: XCTestCase {
 
-    internal final func testRender() {
+    internal final func testInitialize() {
 
         let redView = UIView()
 
@@ -32,7 +32,6 @@ internal final class UIItemComponentTests: XCTestCase {
             redComponent.view
         )
 
-        // Before rendering.
         XCTAssertEqual(
             redComponent.view.frame,
             .zero
@@ -52,6 +51,16 @@ internal final class UIItemComponentTests: XCTestCase {
             redComponent.view.backgroundColor,
             redComponent.itemView.backgroundColor
         )
+
+    }
+
+    internal final func testRender() {
+
+        let redView = UIView()
+
+        redView.backgroundColor = .red
+
+        let redComponent = UIItemComponent(itemView: redView)
 
         // Expect to change back to red after rendering.
         redComponent.view.backgroundColor = .blue
@@ -81,7 +90,7 @@ internal final class UIItemComponentTests: XCTestCase {
 
     }
 
-    internal final func testRenderLayoutForNonIntrinsicContentWithModeFixed() {
+    internal final func testRenderLayoutForNonIntrinsicContentWithContentModeFixed() {
 
         let redView = UIView()
 
@@ -114,7 +123,7 @@ internal final class UIItemComponentTests: XCTestCase {
 
     }
 
-    internal final func testRenderLayoutForNonIntrinsicContentWithModeAutomatic() {
+    internal final func testRenderLayoutForNonIntrinsicContentWithContentModeAutomatic() {
 
         let redView = UIView()
 
@@ -147,7 +156,7 @@ internal final class UIItemComponentTests: XCTestCase {
 
     }
 
-    internal final func testRenderLayoutForIntrinsicContentWithModeFixed() {
+    internal final func testRenderLayoutForIntrinsicContentWithContentModeFixed() {
 
         let label = UILabel()
 
@@ -187,7 +196,7 @@ internal final class UIItemComponentTests: XCTestCase {
 
     }
 
-    internal final func testRenderLayoutForIntrinsicContentWithModeAutomatic() {
+    internal final func testRenderLayoutForIntrinsicContentWithContentModeAutomatic() {
 
         let label = UILabel()
 
