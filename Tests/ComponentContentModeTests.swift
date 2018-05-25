@@ -13,9 +13,9 @@ import XCTest
 @testable import TinyComponent
 
 internal final class ComponentContentModeTests: XCTestCase {
-    
+
     internal final func testEqualModes() {
-        
+
         XCTAssertEqual(
             ComponentContentMode.fixed(
                 size: CGSize(
@@ -30,7 +30,7 @@ internal final class ComponentContentModeTests: XCTestCase {
                 )
             )
         )
-        
+
         XCTAssertEqual(
             ComponentContentMode.automatic(
                 estimatedSize: CGSize(
@@ -45,11 +45,11 @@ internal final class ComponentContentModeTests: XCTestCase {
                 )
             )
         )
-        
+
     }
-    
+
     internal final func testUnequalModes() {
-        
+
         XCTAssertNotEqual(
             ComponentContentMode.fixed(
                 size: CGSize(
@@ -64,7 +64,7 @@ internal final class ComponentContentModeTests: XCTestCase {
                 )
             )
         )
-        
+
     }
-    
+
 }
