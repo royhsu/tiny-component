@@ -12,9 +12,17 @@ import TinyComponent
 
 public final class GradientViewController: UIViewController {
 
-    public final let listComponent = UIListComponent()
+    public final let collectionComponent: CollectionComponent = {
+        
+//        return UIListComponent()
+        
+        return UICollectionComponent(
+            layout: UICollectionViewFlowLayout()
+        )
+        
+    }()
 
-    public final override func loadView() { view = listComponent.view }
+    public final override func loadView() { view = collectionComponent.view }
 
     public final override func viewDidLoad() {
 
@@ -91,7 +99,7 @@ public final class GradientViewController: UIViewController {
 
         }
 
-        listComponent.setItemComponents(itemComponents)
+        collectionComponent.setItemComponents(itemComponents)
 
     }
 
@@ -99,9 +107,9 @@ public final class GradientViewController: UIViewController {
 
         super.viewDidAppear(animated)
 
-        listComponent.contentMode = .fixed(size: view.bounds.size)
+        collectionComponent.contentMode = .fixed(size: view.bounds.size)
 
-        listComponent.render()
+        collectionComponent.render()
 
     }
 
