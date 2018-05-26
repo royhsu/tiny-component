@@ -16,9 +16,20 @@ public final class GradientViewController: UIViewController {
         
 //        return UIListComponent()
         
-        return UICollectionComponent(
-            layout: UICollectionViewFlowLayout()
+//        return UICollectionComponent(
+//            layout: UICollectionViewFlowLayout()
+//        )
+
+        let gridComponent = UIGridComponent()
+        
+        gridComponent.grid = Grid(
+            columns: 3,
+            rows: 2
         )
+        
+        gridComponent.scrollDirection = .horizontal
+        
+        return gridComponent
         
     }()
 
