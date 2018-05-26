@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B070EBB620B96A5F00DAFB38 /* UICollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBB520B96A5F00DAFB38 /* UICollectionViewBridge.swift */; };
+		B070EBB820B96C1600DAFB38 /* UICollectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBB720B96C1600DAFB38 /* UICollectionComponent.swift */; };
+		B070EBBA20B96F0200DAFB38 /* UICollectionComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBB920B96F0200DAFB38 /* UICollectionComponentTests.swift */; };
 		B0FE388420B8068D00FB2E9A /* TinyComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FE388220B8068D00FB2E9A /* TinyComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FE389020B807A200FB2E9A /* TinyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE387620B8064200FB2E9A /* TinyComponent.framework */; };
 		B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE389720B807BA00FB2E9A /* ComponentContentModeTests.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B070EBB520B96A5F00DAFB38 /* UICollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewBridge.swift; sourceTree = "<group>"; };
+		B070EBB720B96C1600DAFB38 /* UICollectionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionComponent.swift; sourceTree = "<group>"; };
+		B070EBB920B96F0200DAFB38 /* UICollectionComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionComponentTests.swift; sourceTree = "<group>"; };
 		B0FE387620B8064200FB2E9A /* TinyComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE388220B8068D00FB2E9A /* TinyComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyComponent.h; sourceTree = "<group>"; };
 		B0FE388320B8068D00FB2E9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,9 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				B0FE38A220B80CB900FB2E9A /* UIView+View.swift */,
+				B070EBB520B96A5F00DAFB38 /* UICollectionViewBridge.swift */,
 				B0FE38B420B8553200FB2E9A /* UITableViewBridge.swift */,
-				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
+				B070EBB720B96C1600DAFB38 /* UICollectionComponent.swift */,
 				B0FE38B620B855F700FB2E9A /* UIListComponent.swift */,
+				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -132,8 +140,9 @@
 		B0FE38B220B8138700FB2E9A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */,
+				B070EBB920B96F0200DAFB38 /* UICollectionComponentTests.swift */,
 				B0FE38BD20B85CEF00FB2E9A /* UIListComponentTests.swift */,
+				B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -168,7 +177,6 @@
 				B0FE387220B8064200FB2E9A /* Frameworks */,
 				B0FE387320B8064200FB2E9A /* Headers */,
 				B0FE387420B8064200FB2E9A /* Resources */,
-				B0FE38A520B80D3300FB2E9A /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -251,23 +259,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B0FE38A520B80D3300FB2E9A /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B0FE387120B8064200FB2E9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +267,8 @@
 				B0FE38A320B80CB900FB2E9A /* UIView+View.swift in Sources */,
 				B0FE389D20B809C800FB2E9A /* ComponentContentMode.swift in Sources */,
 				B0FE389F20B80C6500FB2E9A /* Component.swift in Sources */,
+				B070EBB820B96C1600DAFB38 /* UICollectionComponent.swift in Sources */,
+				B070EBB620B96A5F00DAFB38 /* UICollectionViewBridge.swift in Sources */,
 				B0FE38BC20B857D100FB2E9A /* UIView+Subview.swift in Sources */,
 				B0FE38A720B80E6600FB2E9A /* CollectionComponent.swift in Sources */,
 				B0FE38AF20B8128300FB2E9A /* UIItemComponent.swift in Sources */,
@@ -292,6 +285,7 @@
 			files = (
 				B0FE38B320B8138F00FB2E9A /* UIItemComponentTests.swift in Sources */,
 				B0FE38C020B85CF600FB2E9A /* UIListComponentTests.swift in Sources */,
+				B070EBBA20B96F0200DAFB38 /* UICollectionComponentTests.swift in Sources */,
 				B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
