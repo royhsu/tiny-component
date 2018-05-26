@@ -14,6 +14,7 @@
 		B070EBC020B98CCE00DAFB38 /* UIGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBBF20B98CCE00DAFB38 /* UIGridComponent.swift */; };
 		B070EBC220B98E0000DAFB38 /* ScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */; };
 		B070EBC420B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */; };
+		B070EBC620B9983A00DAFB38 /* UICarouselComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC520B9983A00DAFB38 /* UICarouselComponent.swift */; };
 		B0FE388420B8068D00FB2E9A /* TinyComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FE388220B8068D00FB2E9A /* TinyComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FE389020B807A200FB2E9A /* TinyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE387620B8064200FB2E9A /* TinyComponent.framework */; };
 		B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE389720B807BA00FB2E9A /* ComponentContentModeTests.swift */; };
@@ -49,6 +50,7 @@
 		B070EBBF20B98CCE00DAFB38 /* UIGridComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGridComponent.swift; sourceTree = "<group>"; };
 		B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirection.swift; sourceTree = "<group>"; };
 		B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SafeAreaRect.swift"; sourceTree = "<group>"; };
+		B070EBC520B9983A00DAFB38 /* UICarouselComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICarouselComponent.swift; sourceTree = "<group>"; };
 		B0FE387620B8064200FB2E9A /* TinyComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE388220B8068D00FB2E9A /* TinyComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyComponent.h; sourceTree = "<group>"; };
 		B0FE388320B8068D00FB2E9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				B0FE38B420B8553200FB2E9A /* UITableViewBridge.swift */,
 				B070EBB720B96C1600DAFB38 /* UICollectionComponent.swift */,
 				B070EBBF20B98CCE00DAFB38 /* UIGridComponent.swift */,
+				B070EBC520B9983A00DAFB38 /* UICarouselComponent.swift */,
 				B0FE38B620B855F700FB2E9A /* UIListComponent.swift */,
 				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
 			);
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B070EBC620B9983A00DAFB38 /* UICarouselComponent.swift in Sources */,
 				B0FE38A320B80CB900FB2E9A /* UIView+View.swift in Sources */,
 				B0FE389D20B809C800FB2E9A /* ComponentContentMode.swift in Sources */,
 				B070EBBE20B98CA800DAFB38 /* Grid.swift in Sources */,

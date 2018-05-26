@@ -1,6 +1,6 @@
 //
 //  UIGridComponent.swift
-//  TinyKit
+//  TinyComponent
 //
 //  Created by Roy Hsu on 2018/4/10.
 //  Copyright © 2018 TinyWorld. All rights reserved.
@@ -80,6 +80,8 @@ public final class UIGridComponent: CollectionComponent {
         
     }
     
+    private final var cachedGridSize: CGSize = .zero
+    
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     public init(
@@ -138,60 +140,14 @@ public final class UIGridComponent: CollectionComponent {
     
     public final func setItemComponent(provider: @escaping ItemComponentProvider) {
         
-        collectionComponent.setItemComponent { [unowned self] component, indexPath in
-            
-            let safeAreaRect = self.collectionComponent.collectionView.safeAreaRect
-            
-            let columns = self.grid.columns
-            
-            let rows = self.grid.rows
-            
-            let interitemSpacing = self.interitemSpacing
-            
-            let lineSpacing = self.lineSpacing
+        collectionComponent.setItemComponent { [unowned self] _, indexPath in
             
             let itemComponent = provider(
-                component,
+                self,
                 indexPath
             )
             
-            let gridSize: CGSize
-            
-            switch self.scrollDirection {
-                
-            case .vertical:
-                
-                var spacingOfInteritems = CGFloat(columns - 1) * interitemSpacing
-                
-                if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
-                
-                var spacingOfLines = CGFloat(rows - 1) * lineSpacing
-                
-                if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
-                
-                gridSize = CGSize(
-                    width: (safeAreaRect.width - spacingOfInteritems) / CGFloat(columns),
-                    height: (safeAreaRect.height - spacingOfLines) / CGFloat(rows)
-                )
-                
-            case .horizontal:
-                
-                var spacingOfInteritems = CGFloat(rows - 1) * interitemSpacing
-                
-                if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
-                
-                var spacingOfLines = CGFloat(columns - 1) * lineSpacing
-                
-                if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
-                
-                gridSize = CGSize(
-                    width: (safeAreaRect.width - spacingOfLines) / CGFloat(columns),
-                    height: (safeAreaRect.height - spacingOfInteritems) / CGFloat(rows)
-                )
-                
-            }
-            
-            itemComponent.contentMode = .fixed(size: gridSize)
+            itemComponent.contentMode = .fixed(size: self.cachedGridSize)
             
             return itemComponent
             
@@ -209,18 +165,62 @@ public final class UIGridComponent: CollectionComponent {
         
     }
     
-    public final func render() { collectionComponent.render() }
+    public final func render() {
+        
+        cachedGridSize = calculateGridSize()
+        
+        collectionComponent.render()
+        
+    }
+    
+    fileprivate final func calculateGridSize() -> CGSize {
+        
+        let safeAreaRect = collectionComponent.collectionView.safeAreaRect
+        
+        let columns = grid.columns
+        
+        let rows = grid.rows
+        
+        switch scrollDirection {
+            
+        case .vertical:
+            
+            var spacingOfInteritems = CGFloat(columns - 1) * interitemSpacing
+            
+            if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
+            
+            var spacingOfLines = CGFloat(rows - 1) * lineSpacing
+            
+            if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
+            
+            return CGSize(
+                width: (safeAreaRect.width - spacingOfInteritems) / CGFloat(columns),
+                height: (safeAreaRect.height - spacingOfLines) / CGFloat(rows)
+            )
+            
+        case .horizontal:
+            
+            var spacingOfInteritems = CGFloat(rows - 1) * interitemSpacing
+            
+            if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
+            
+            var spacingOfLines = CGFloat(columns - 1) * lineSpacing
+            
+            if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
+            
+            return CGSize(
+                width: (safeAreaRect.width - spacingOfLines) / CGFloat(columns),
+                height: (safeAreaRect.height - spacingOfInteritems) / CGFloat(rows)
+            )
+            
+        }
+        
+    }
     
     // MARK: ViewRenderable
     
     public final var view: View { return collectionComponent.view }
     
     public final var preferredContentSize: CGSize { return  collectionComponent.preferredContentSize }
-    
-}
-
-public extension UIGridComponent {
-    
-    public final var collectionView: UICollectionView { return collectionComponent.collectionView }
     
 }
