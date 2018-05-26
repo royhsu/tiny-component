@@ -38,19 +38,6 @@ public final class UICollectionComponent: CollectionComponent {
         
     }
     
-//    public typealias SizeForItemProvider = (
-//        _ component: Component,
-//        _ layout: UICollectionViewLayout,
-//        _ indexPath: IndexPath
-//    )
-//    -> CGSize
-//
-//    public final func setSizeForItem(provider: @escaping SizeForItemProvider) {
-//
-//        
-//
-//    }
-    
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     ///   - layout: The collection view layout.
