@@ -173,6 +173,16 @@ public final class UIGridComponent: CollectionComponent {
         
     }
     
+    // MARK: ViewRenderable
+    
+    public final var view: View { return collectionComponent.view }
+    
+    public final var preferredContentSize: CGSize { return  collectionComponent.preferredContentSize }
+    
+}
+
+fileprivate extension UIGridComponent {
+
     fileprivate final func calculateGridSize() -> CGSize {
         
         let safeAreaRect = collectionComponent.collectionView.safeAreaRect
@@ -216,11 +226,5 @@ public final class UIGridComponent: CollectionComponent {
         }
         
     }
-    
-    // MARK: ViewRenderable
-    
-    public final var view: View { return collectionComponent.view }
-    
-    public final var preferredContentSize: CGSize { return  collectionComponent.preferredContentSize }
     
 }
