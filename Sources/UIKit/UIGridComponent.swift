@@ -84,6 +84,8 @@ public final class UIGridComponent: CollectionComponent {
         
     }
     
+    /// - Parameters:
+    ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     public init(
         contentMode: ComponentContentMode = .automatic(estimatedSize: .zero)
     ) {
