@@ -115,7 +115,6 @@
 		B0FE388120B8068D00FB2E9A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE38BA20B8576200FB2E9A /* Utilities */,
 				B0FE38A420B80D1C00FB2E9A /* UIKit */,
 				B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */,
 				B0FE389C20B809C800FB2E9A /* ComponentContentMode.swift */,
@@ -143,6 +142,7 @@
 		B0FE38A420B80D1C00FB2E9A /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE38BB20B857D000FB2E9A /* UIView+Subview.swift */,
 				B0FE38A220B80CB900FB2E9A /* UIView+View.swift */,
 				B070EBB520B96A5F00DAFB38 /* UICollectionViewBridge.swift */,
 				B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */,
@@ -166,14 +166,6 @@
 				B070EBCA20BA58E000DAFB38 /* UIBoxComponentTests.swift */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		B0FE38BA20B8576200FB2E9A /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				B0FE38BB20B857D000FB2E9A /* UIView+Subview.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
