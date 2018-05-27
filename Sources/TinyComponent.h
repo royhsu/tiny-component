@@ -6,7 +6,7 @@
 //  Copyright © 2018 TinyWorld. All rights reserved.
 //
 
-@import UIKit;
+@import Foundation;
 
 FOUNDATION_EXPORT double TinyComponentVersionNumber;
 

@@ -8,6 +8,8 @@
 
 // MARK: - ComponentContentMode
 
+import CoreGraphics
+
 public enum ComponentContentMode {
 
     case fixed(size: CGSize)

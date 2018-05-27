@@ -8,6 +8,8 @@
 
 // MARK: - UITableViewBridge
 
+import UIKit
+
 internal final class UITableViewBridge: NSObject {
 
     private final unowned let tableView: UITableView

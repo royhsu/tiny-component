@@ -1,17 +1,35 @@
 //
-//  UICarouselComponent.swift
+//  UIGridComponent.swift
 //  TinyComponent
 //
-//  Created by Roy Hsu on 03/03/2018.
+//  Created by Roy Hsu on 2018/4/10.
 //  Copyright © 2018 TinyWorld. All rights reserved.
 //
 
-// MARK: - UICarouselComponent
+// MARK: - UIGridComponent
 
-/// The default implementation of carousel layout component.
+import UIKit
+
+/// The default implementation of grid layout component.
 ///
-/// Please note that the carousel component will override the content mode of item components by stretching the height of them to fit the parent.
-public final class UICarouselComponent: CollectionComponent {
+/// The grid component uses the specified columns and rows to calculate the rect for each item component.
+/// Please note that the grid component will override the content mode of item components.
+///
+/// ---------------------------> Column
+/// |
+/// |  |----------|----------|
+/// |  |          |          |
+/// |  |   Item   |   Item   |
+/// |  |          |          |
+/// |  |----------|----------|
+/// |  |          |          |
+/// |  |   Item   |   Item   |
+/// |  |          |          |
+/// |  |----------|----------|
+/// |
+/// v
+/// Row
+public final class UIGridComponent: CollectionComponent {
 
     /// The base component.
     private final let collectionComponent: UICollectionComponent
@@ -20,11 +38,49 @@ public final class UICarouselComponent: CollectionComponent {
 
     private final let collectionViewFlowLayout: UICollectionViewFlowLayout
 
+    public final var grid: Grid
+
     public final var interitemSpacing: CGFloat {
+
+        get { return collectionViewFlowLayout.minimumInteritemSpacing }
+
+        set { collectionViewFlowLayout.minimumInteritemSpacing = newValue }
+
+    }
+
+    public final var lineSpacing: CGFloat {
 
         get { return collectionViewFlowLayout.minimumLineSpacing }
 
         set { collectionViewFlowLayout.minimumLineSpacing = newValue }
+
+    }
+
+    public final var scrollDirection: ScrollDirection {
+
+        get {
+
+            switch collectionViewFlowLayout.scrollDirection {
+
+            case .vertical: return .vertical
+
+            case .horizontal: return .horizontal
+
+            }
+
+        }
+
+        set {
+
+            switch newValue {
+
+            case .vertical: collectionViewFlowLayout.scrollDirection = .vertical
+
+            case .horizontal: collectionViewFlowLayout.scrollDirection = .horizontal
+
+            }
+
+        }
 
     }
 
@@ -44,6 +100,8 @@ public final class UICarouselComponent: CollectionComponent {
 
     }
 
+    private final var cachedGridSize: CGSize = .zero
+
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     public init(
@@ -55,6 +113,11 @@ public final class UICarouselComponent: CollectionComponent {
         self.collectionComponent = UICollectionComponent(
             contentMode: contentMode,
             layout: collectionViewFlowLayout
+        )
+
+        self.grid = Grid(
+            columns: 1,
+            rows: 1
         )
 
         self.prepare()
@@ -69,7 +132,7 @@ public final class UICarouselComponent: CollectionComponent {
 
         collectionViewFlowLayout.minimumLineSpacing = 0.0
 
-        collectionViewFlowLayout.scrollDirection = .horizontal
+        collectionViewFlowLayout.scrollDirection = .vertical
 
         collectionViewFlowLayout.headerReferenceSize = .zero
 
@@ -99,33 +162,12 @@ public final class UICarouselComponent: CollectionComponent {
 
         collectionComponent.setItemComponent { [unowned self] _, indexPath in
 
-            let safeAreaRect = self.collectionView.safeAreaRect
-
             let itemComponent = provider(
                 self,
                 indexPath
             )
 
-            let itemSize: CGSize
-
-            switch itemComponent.contentMode {
-
-            case let .fixed(size):
-
-                itemSize = CGSize(
-                    width: size.width,
-                    height: safeAreaRect.height
-                )
-
-            case let .automatic(estimatedSize):
-
-                itemSize = CGSize(
-                    width: estimatedSize.width,
-                    height: safeAreaRect.height
-                )
-            }
-
-            itemComponent.contentMode = .fixed(size: itemSize)
+            itemComponent.contentMode = .fixed(size: self.cachedGridSize)
 
             return itemComponent
 
@@ -157,6 +199,8 @@ public final class UICarouselComponent: CollectionComponent {
 
         collectionView.frame.size = initialSize
 
+        cachedGridSize = calculateGridSize()
+
         collectionComponent.render()
 
     }
@@ -165,6 +209,54 @@ public final class UICarouselComponent: CollectionComponent {
 
     public final var view: View { return collectionComponent.view }
 
-    public final var preferredContentSize: CGSize { return collectionComponent.preferredContentSize }
+    public final var preferredContentSize: CGSize { return  collectionComponent.preferredContentSize }
+
+}
+
+fileprivate extension UIGridComponent {
+
+    fileprivate final func calculateGridSize() -> CGSize {
+
+        let safeAreaRect = collectionView.safeAreaRect
+
+        let columns = grid.columns
+
+        let rows = grid.rows
+
+        switch scrollDirection {
+
+        case .vertical:
+
+            var spacingOfInteritems = CGFloat(columns - 1) * interitemSpacing
+
+            if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
+
+            var spacingOfLines = CGFloat(rows - 1) * lineSpacing
+
+            if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
+
+            return CGSize(
+                width: (safeAreaRect.width - spacingOfInteritems) / CGFloat(columns),
+                height: (safeAreaRect.height - spacingOfLines) / CGFloat(rows)
+            )
+
+        case .horizontal:
+
+            var spacingOfInteritems = CGFloat(rows - 1) * interitemSpacing
+
+            if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
+
+            var spacingOfLines = CGFloat(columns - 1) * lineSpacing
+
+            if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
+
+            return CGSize(
+                width: (safeAreaRect.width - spacingOfLines) / CGFloat(columns),
+                height: (safeAreaRect.height - spacingOfInteritems) / CGFloat(rows)
+            )
+
+        }
+
+    }
 
 }

@@ -8,6 +8,8 @@
 
 // MARK: - Safe Area Rect
 
+import UIKit
+
 public extension UICollectionView {
 
     public final var safeAreaRect: CGRect {

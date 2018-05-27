@@ -8,6 +8,8 @@
 
 // MARK: - Subview
 
+import UIKit
+
 // Reference: https://stackoverflow.com/questions/26652854/ios8-cell-constraints-break-when-adding-disclosure-indicator
 public extension UIView {
 

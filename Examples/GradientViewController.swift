@@ -9,6 +9,7 @@
 // MARK: - GradientViewController
 
 import TinyComponent
+import UIKit
 
 public final class GradientViewController: UIViewController {
 

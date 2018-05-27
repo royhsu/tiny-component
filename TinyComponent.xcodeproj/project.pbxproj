@@ -115,7 +115,7 @@
 		B0FE388120B8068D00FB2E9A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE38A420B80D1C00FB2E9A /* UIKit */,
+				B0FE38A420B80D1C00FB2E9A /* iOS */,
 				B0FE38A020B80C9C00FB2E9A /* ViewRenderable.swift */,
 				B0FE389C20B809C800FB2E9A /* ComponentContentMode.swift */,
 				B0FE389E20B80C6500FB2E9A /* Component.swift */,
@@ -139,7 +139,7 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		B0FE38A420B80D1C00FB2E9A /* UIKit */ = {
+		B0FE38A420B80D1C00FB2E9A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				B0FE38BB20B857D000FB2E9A /* UIView+Subview.swift */,
@@ -154,7 +154,7 @@
 				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
 				B070EBC820BA563100DAFB38 /* UIBoxComponent.swift */,
 			);
-			path = UIKit;
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		B0FE38B220B8138700FB2E9A /* UIKit */ = {

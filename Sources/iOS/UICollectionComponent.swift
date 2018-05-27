@@ -8,6 +8,8 @@
 
 // MARK: - UICollectionComponent
 
+import UIKit
+
 /// The default implementation of collection layout component.
 ///
 /// The collection component needs a dedicated layout to render the item components.

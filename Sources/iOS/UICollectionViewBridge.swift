@@ -8,6 +8,8 @@
 
 // MARK: - UICollectionViewBridge
 
+import UIKit
+
 internal final class UICollectionViewBridge: NSObject {
 
     private final unowned let collectionView: UICollectionView

@@ -8,6 +8,8 @@
 
 // MARK: - ViewRenderable
 
+import CoreGraphics
+
 public protocol ViewRenderable {
 
     var view: View { get }

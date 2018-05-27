@@ -8,6 +8,8 @@
 
 // MARK: - UIBoxComponent
 
+import UIKit
+
 /// The box component provides a convenient way to wrap a component as the content with the custom padding insets.
 /// Note: The box component will override the content mode of the content component.
 public final class UIBoxComponent: Component {

@@ -8,6 +8,8 @@
 
 // MARK: - UIListComponent
 
+import UIKit
+
 /// The default implementation of list layout component.
 ///
 /// The list component uses the specified width in the content mode to calculate the rect of each associated components including item, header and footer components.
