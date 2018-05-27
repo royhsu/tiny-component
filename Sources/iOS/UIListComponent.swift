@@ -62,6 +62,8 @@ public final class UIListComponent: ListComponent {
 
         tableView.clipsToBounds = false
 
+        tableView.estimatedRowHeight = 0.0
+
         bridge.configureCellHandler = { [unowned self] cell, indexPath in
 
             let component = self.itemComponent(at: indexPath)
