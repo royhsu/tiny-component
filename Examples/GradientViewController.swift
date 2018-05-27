@@ -12,109 +12,63 @@ import TinyComponent
 
 public final class GradientViewController: UIViewController {
 
-    public final let collectionComponent: CollectionComponent = {
+    public final let listComponnt = UIListComponent()
 
-//        return UIListComponent()
-
-//        return UICollectionComponent(
-//            layout: UICollectionViewFlowLayout()
-//        )
-
-//        let gridComponent = UIGridComponent()
-//
-//        gridComponent.grid = Grid(
-//            columns: 3,
-//            rows: 2
-//        )
-//
-//        gridComponent.scrollDirection = .horizontal
-//
-//        return gridComponent
-
-        let carouselComponent = UICarouselComponent()
-
-        return carouselComponent
-
-    }()
-
-    public final override func loadView() { view = collectionComponent.view }
+    public final override func loadView() { view = listComponnt.view }
 
     public final override func viewDidLoad() {
 
         super.viewDidLoad()
 
-        let colors = [
-            UIColor(
-                red: 0.45,
-                green: 0.15,
-                blue: 0.3,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.58,
-                green: 0.2,
-                blue: 0.34,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.65,
-                green: 0.23,
-                blue: 0.36,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.73,
-                green: 0.25,
-                blue: 0.38,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.79,
-                green: 0.28,
-                blue: 0.4,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.8,
-                green: 0.35,
-                blue: 0.48,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.82,
-                green: 0.45,
-                blue: 0.57,
-                alpha: 1.0
-            ),
-            UIColor(
-                red: 0.86,
-                green: 0.6,
-                blue: 0.69,
-                alpha: 1.0
+        let gridComponent = UIGridComponent(
+            contentMode: .fixed(
+                size: CGSize(
+                    width: 300.0,
+                    height: 300.0
+                )
             )
-        ]
+        )
 
-        let itemComponents = colors.map { color -> Component in
+        gridComponent.grid = Grid(
+            columns: 2,
+            rows: 3
+        )
 
-            let view = UIView()
+        gridComponent.scrollDirection = .horizontal
 
-            view.backgroundColor = color
+        gridComponent.setItemComponents(
+            DynamicGradient
+                .utralVoilet
+                .colorPalette(amount: 12)
+                .map(makeComponent)
+        )
 
-            let itemComponent = UIItemComponent(
-                contentMode: .fixed(
-                    size: CGSize(
-                        width: 100.0,
-                        height: 100.0
-                    )
-                ),
-                itemView: view
+        let carouselComponent = UICarouselComponent(
+            contentMode: .fixed(
+                size: CGSize(
+                    width: 100.0,
+                    height: 100.0
+                )
             )
+        )
 
-            return itemComponent
+        carouselComponent.setItemComponents(
+            DynamicGradient
+                .mojito
+                .colorPalette(amount: 10)
+                .map(makeComponent)
+        )
 
-        }
+        listComponnt.headerComponent = gridComponent
 
-        collectionComponent.setItemComponents(itemComponents)
+        listComponnt.setItemComponents(
+            DynamicGradient
+                .kyoto
+                .colorPalette(amount: 5)
+                .map(makeComponent)
+        )
+
+        listComponnt.footerComponent = carouselComponent
 
     }
 
@@ -122,9 +76,29 @@ public final class GradientViewController: UIViewController {
 
         super.viewDidAppear(animated)
 
-        collectionComponent.contentMode = .fixed(size: view.bounds.size)
+        listComponnt.contentMode = .fixed(size: view.bounds.size)
 
-        collectionComponent.render()
+        listComponnt.render()
+
+    }
+
+    internal final func makeComponent(with color: DynamicColor) -> Component {
+
+        let view = UIView()
+
+        view.backgroundColor = color
+
+        let itemComponent = UIItemComponent(
+            contentMode: .fixed(
+                size: CGSize(
+                    width: 100.0,
+                    height: 100.0
+                )
+            ),
+            itemView: view
+        )
+
+        return itemComponent
 
     }
 

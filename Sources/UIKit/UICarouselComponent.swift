@@ -125,7 +125,23 @@ public final class UICarouselComponent: CollectionComponent {
 
     }
 
-    public final func render() { collectionComponent.render() }
+    public final func render() {
+
+        let initialSize: CGSize
+
+        switch contentMode {
+
+        case let .fixed(size): initialSize = size
+
+        case let .automatic(estimatedSize): initialSize = estimatedSize
+
+        }
+
+        collectionComponent.collectionView.frame.size = initialSize
+
+        collectionComponent.render()
+
+    }
 
     // MARK: ViewRenderable
 

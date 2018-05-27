@@ -74,37 +74,43 @@ public final class UIListComponent: ListComponent {
 
         bridge.heightForRowProvider = { [unowned self] indexPath in
 
-            let component = self.itemComponent(at: indexPath)
+            let initialSize: CGSize
 
-            switch component.contentMode {
+            switch self.contentMode {
+
+            case let .fixed(size): initialSize = size
+
+            case let .automatic(estimatedSize): initialSize = estimatedSize
+
+            }
+
+            let itemComponent = self.itemComponent(at: indexPath)
+
+            switch itemComponent.contentMode {
 
             case let .fixed(size):
 
-                component.contentMode = .fixed(
+                itemComponent.contentMode = .fixed(
                     size: CGSize(
-                        width: self.tableView.frame.width,
+                        width: initialSize.width,
                         height: size.height
                     )
                 )
 
-                component.render()
-
-                return size.height
-
             case let .automatic(estimatedSize):
 
-                component.contentMode = .automatic(
+                itemComponent.contentMode = .automatic(
                     estimatedSize: CGSize(
-                        width: self.tableView.frame.width,
+                        width: initialSize.width,
                         height: estimatedSize.height
                     )
                 )
 
-                component.render()
-
-                return component.view.frame.height
-
             }
+
+            itemComponent.render()
+
+            return itemComponent.preferredContentSize.height
 
         }
 

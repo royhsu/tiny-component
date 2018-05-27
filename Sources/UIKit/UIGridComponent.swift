@@ -167,6 +167,18 @@ public final class UIGridComponent: CollectionComponent {
 
     public final func render() {
 
+        let initialSize: CGSize
+
+        switch contentMode {
+
+        case let .fixed(size): initialSize = size
+
+        case let .automatic(estimatedSize): initialSize = estimatedSize
+
+        }
+
+        collectionComponent.collectionView.frame.size = initialSize
+
         cachedGridSize = calculateGridSize()
 
         collectionComponent.render()
