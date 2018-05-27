@@ -13,9 +13,9 @@ import UIKit
 
 public final class GradientViewController: UIViewController {
 
-    public final let listComponnt = UIListComponent()
+    public final let listComponent = UIListComponent()
 
-    public final override func loadView() { view = listComponnt.view }
+    public final override func loadView() { view = listComponent.view }
 
     public final override func viewDidLoad() {
 
@@ -60,16 +60,16 @@ public final class GradientViewController: UIViewController {
                 .map(makeComponent)
         )
 
-        listComponnt.headerComponent = gridComponent
+        listComponent.headerComponent = gridComponent
 
-        listComponnt.setItemComponents(
+        listComponent.setItemComponents(
             DynamicGradient
                 .kyoto
                 .colorPalette(amount: 5)
                 .map(makeComponent)
         )
 
-        listComponnt.footerComponent = carouselComponent
+        listComponent.footerComponent = carouselComponent
 
     }
 
@@ -77,9 +77,9 @@ public final class GradientViewController: UIViewController {
 
         super.viewDidAppear(animated)
 
-        listComponnt.contentMode = .fixed(size: view.bounds.size)
+        listComponent.contentMode = .fixed(size: view.bounds.size)
 
-        listComponnt.render()
+        listComponent.render()
 
     }
 
