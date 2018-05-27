@@ -112,9 +112,9 @@ public final class UIListComponent: ListComponent {
 
     fileprivate final func prepareLayout() {
 
-        tableViewWidthConstraint.priority = UILayoutPriority(750.0)
+        tableViewWidthConstraint.priority = .defaultHigh
 
-        tableViewHeightConstraint.priority = UILayoutPriority(750.0)
+        tableViewHeightConstraint.priority = .defaultHigh
 
         let initialSize: CGSize
 

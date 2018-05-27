@@ -103,9 +103,9 @@ public final class UICollectionComponent: CollectionComponent {
 
     fileprivate final func prepareLayout() {
 
-        collectionViewWidthConstraint.priority = UILayoutPriority(750.0)
+        collectionViewWidthConstraint.priority = .defaultHigh
 
-        collectionViewHeightConstraint.priority = UILayoutPriority(750.0)
+        collectionViewHeightConstraint.priority = .defaultHigh
 
         let initialSize: CGSize
 

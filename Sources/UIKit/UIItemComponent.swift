@@ -74,9 +74,9 @@ public final class UIItemComponent<ItemView: UIView>: Component {
 
         itemViewTrailingConstraint.priority = UILayoutPriority(900.0)
 
-        itemViewWidthConstraint.priority = UILayoutPriority(750.0)
+        itemViewWidthConstraint.priority = .defaultHigh
 
-        itemViewHeightConstraint.priority = UILayoutPriority(750.0)
+        itemViewHeightConstraint.priority = .defaultHigh
 
         let initialSize: CGSize
 
