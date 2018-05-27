@@ -15,6 +15,8 @@
 		B070EBC220B98E0000DAFB38 /* ScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */; };
 		B070EBC420B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */; };
 		B070EBC620B9983A00DAFB38 /* UICarouselComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC520B9983A00DAFB38 /* UICarouselComponent.swift */; };
+		B070EBC920BA563100DAFB38 /* UIBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC820BA563100DAFB38 /* UIBoxComponent.swift */; };
+		B070EBCC20BA58E500DAFB38 /* UIBoxComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBCA20BA58E000DAFB38 /* UIBoxComponentTests.swift */; };
 		B0FE388420B8068D00FB2E9A /* TinyComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FE388220B8068D00FB2E9A /* TinyComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FE389020B807A200FB2E9A /* TinyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FE387620B8064200FB2E9A /* TinyComponent.framework */; };
 		B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE389720B807BA00FB2E9A /* ComponentContentModeTests.swift */; };
@@ -51,6 +53,8 @@
 		B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirection.swift; sourceTree = "<group>"; };
 		B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SafeAreaRect.swift"; sourceTree = "<group>"; };
 		B070EBC520B9983A00DAFB38 /* UICarouselComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICarouselComponent.swift; sourceTree = "<group>"; };
+		B070EBC820BA563100DAFB38 /* UIBoxComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBoxComponent.swift; sourceTree = "<group>"; };
+		B070EBCA20BA58E000DAFB38 /* UIBoxComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBoxComponentTests.swift; sourceTree = "<group>"; };
 		B0FE387620B8064200FB2E9A /* TinyComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE388220B8068D00FB2E9A /* TinyComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyComponent.h; sourceTree = "<group>"; };
 		B0FE388320B8068D00FB2E9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				B070EBC520B9983A00DAFB38 /* UICarouselComponent.swift */,
 				B0FE38B620B855F700FB2E9A /* UIListComponent.swift */,
 				B0FE38AE20B8128300FB2E9A /* UIItemComponent.swift */,
+				B070EBC820BA563100DAFB38 /* UIBoxComponent.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				B070EBB920B96F0200DAFB38 /* UICollectionComponentTests.swift */,
 				B0FE38BD20B85CEF00FB2E9A /* UIListComponentTests.swift */,
 				B0FE38B020B8138300FB2E9A /* UIItemComponentTests.swift */,
+				B070EBCA20BA58E000DAFB38 /* UIBoxComponentTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 				B0FE389D20B809C800FB2E9A /* ComponentContentMode.swift in Sources */,
 				B070EBBE20B98CA800DAFB38 /* Grid.swift in Sources */,
 				B070EBC020B98CCE00DAFB38 /* UIGridComponent.swift in Sources */,
+				B070EBC920BA563100DAFB38 /* UIBoxComponent.swift in Sources */,
 				B070EBC420B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift in Sources */,
 				B0FE389F20B80C6500FB2E9A /* Component.swift in Sources */,
 				B070EBC220B98E0000DAFB38 /* ScrollDirection.swift in Sources */,
@@ -324,6 +331,7 @@
 				B0FE38B320B8138F00FB2E9A /* UIItemComponentTests.swift in Sources */,
 				B0FE38C020B85CF600FB2E9A /* UIListComponentTests.swift in Sources */,
 				B070EBBA20B96F0200DAFB38 /* UICollectionComponentTests.swift in Sources */,
+				B070EBCC20BA58E500DAFB38 /* UIBoxComponentTests.swift in Sources */,
 				B0FE389B20B808C100FB2E9A /* ComponentContentModeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
