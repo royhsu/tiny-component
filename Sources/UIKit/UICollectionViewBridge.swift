@@ -11,17 +11,17 @@
 public final class UICollectionViewBridge: NSObject {
 
     private final unowned let collectionView: UICollectionView
-    
+
     private final let cellIdentifier = "UICollectionViewCell"
 
     public init(collectionView: UICollectionView) {
 
         self.numberOfSections = 0
-        
+
         self.numberOfItemsProvider = { _ in 0 }
-        
+
         self.sizeForItemProvider = { _, _ in .zero }
-        
+
         self.collectionView = collectionView
 
         super.init()
@@ -29,7 +29,7 @@ public final class UICollectionViewBridge: NSObject {
         setUpCollectionView(collectionView)
 
     }
-    
+
     // MARK: Set Up
 
     fileprivate final func setUpCollectionView(_ collectionView: UICollectionView) {

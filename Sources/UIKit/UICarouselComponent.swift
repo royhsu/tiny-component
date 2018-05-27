@@ -8,20 +8,22 @@
 
 // MARK: - UICarouselComponent
 
-/// All items in a carousel component will be stretch out their height to fit the parent.
+/// The default implementation of carousel layout component.
+///
+/// Please note that the carousel component will override the content mode of item components by stretching the height of them to fit the parent.
 public final class UICarouselComponent: CollectionComponent {
 
     /// The base component.
     private final let collectionComponent: UICollectionComponent
 
     private final let collectionViewFlowLayout: UICollectionViewFlowLayout
-    
+
     public final var interitemSpacing: CGFloat {
-        
+
         get { return collectionViewFlowLayout.minimumLineSpacing }
-        
+
         set { collectionViewFlowLayout.minimumLineSpacing = newValue }
-        
+
     }
 
     /// - Parameters:
@@ -29,53 +31,90 @@ public final class UICarouselComponent: CollectionComponent {
     public init(
         contentMode: ComponentContentMode = .automatic(estimatedSize: .zero)
     ) {
-        
+
         self.collectionViewFlowLayout = UICollectionViewFlowLayout()
-        
+
         self.collectionComponent = UICollectionComponent(
             contentMode: contentMode,
             layout: collectionViewFlowLayout
         )
-        
+
         self.prepare()
 
     }
-    
+
     // MARK: Set Up
-    
-    fileprivate final func prepare() { }
+
+    fileprivate final func prepare() {
+
+        collectionViewFlowLayout.minimumInteritemSpacing = 0.0
+
+        collectionViewFlowLayout.minimumLineSpacing = 0.0
+
+        collectionViewFlowLayout.scrollDirection = .horizontal
+
+        collectionViewFlowLayout.headerReferenceSize = .zero
+
+        collectionViewFlowLayout.footerReferenceSize = .zero
+
+        collectionViewFlowLayout.sectionInset = .zero
+
+    }
 
     // MARK: CollectionComponent
-    
+
     public final var numberOfSections: Int {
-        
+
         get { return collectionComponent.numberOfSections }
-        
+
         set { collectionComponent.numberOfSections = newValue }
-        
+
     }
-    
+
     public final func numberOfItemComponents(inSection section: Int) -> Int { return collectionComponent.numberOfItemComponents(inSection: section) }
-    
+
     public final func setNumberOfItemComponents(provider: @escaping NumberOfItemComponentsProvider) { collectionComponent.setNumberOfItemComponents(provider: provider) }
-    
+
     public final func itemComponent(at indexPath: IndexPath) -> Component { return collectionComponent.itemComponent(at: indexPath) }
-    
+
     public final func setItemComponent(provider: @escaping ItemComponentProvider) {
-        
+
         collectionComponent.setItemComponent { [unowned self] _, indexPath in
-        
+
+            let safeAreaRect = self.collectionComponent.collectionView.safeAreaRect
+
             let itemComponent = provider(
                 self,
                 indexPath
             )
-            
+
+            let itemSize: CGSize
+
+            switch itemComponent.contentMode {
+
+            case let .fixed(size):
+
+                itemSize = CGSize(
+                    width: size.width,
+                    height: safeAreaRect.height
+                )
+
+            case let .automatic(estimatedSize):
+
+                itemSize = CGSize(
+                    width: estimatedSize.width,
+                    height: safeAreaRect.height
+                )
+            }
+
+            itemComponent.contentMode = .fixed(size: itemSize)
+
             return itemComponent
-            
+
         }
-        
+
     }
-    
+
     // MARK: Component
 
     public final var contentMode: ComponentContentMode {

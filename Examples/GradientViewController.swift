@@ -13,24 +13,28 @@ import TinyComponent
 public final class GradientViewController: UIViewController {
 
     public final let collectionComponent: CollectionComponent = {
-        
+
 //        return UIListComponent()
-        
+
 //        return UICollectionComponent(
 //            layout: UICollectionViewFlowLayout()
 //        )
 
-        let gridComponent = UIGridComponent()
-        
-        gridComponent.grid = Grid(
-            columns: 3,
-            rows: 2
-        )
-        
-        gridComponent.scrollDirection = .horizontal
-        
-        return gridComponent
-        
+//        let gridComponent = UIGridComponent()
+//
+//        gridComponent.grid = Grid(
+//            columns: 3,
+//            rows: 2
+//        )
+//
+//        gridComponent.scrollDirection = .horizontal
+//
+//        return gridComponent
+
+        let carouselComponent = UICarouselComponent()
+
+        return carouselComponent
+
     }()
 
     public final override func loadView() { view = collectionComponent.view }

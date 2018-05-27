@@ -12,6 +12,7 @@ import XCTest
 
 @testable import TinyComponent
 
+// swiftlint:disable type_body_length
 internal final class UIListComponentTests: XCTestCase {
 
     internal final func testInitialize() {
@@ -162,7 +163,7 @@ internal final class UIListComponentTests: XCTestCase {
                 )
             )
         )
-        
+
         XCTAssertEqual(
             firstItemComponent.view.frame.size,
             CGSize(
@@ -195,7 +196,7 @@ internal final class UIListComponentTests: XCTestCase {
                 height: expectedLabelSize.height
             )
         )
-        
+
     }
 
     internal final func testRenderHeaderComponent() {
@@ -389,3 +390,4 @@ internal final class UIListComponentTests: XCTestCase {
     }
 
 }
+// swiftlint:enable type_body_length

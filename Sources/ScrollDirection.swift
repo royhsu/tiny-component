@@ -9,7 +9,7 @@
 // MARK: - ScrollDirection
 
 public enum ScrollDirection {
-    
+
     case vertical, horizontal
-    
+
 }

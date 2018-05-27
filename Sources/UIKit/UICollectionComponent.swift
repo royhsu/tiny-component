@@ -21,23 +21,23 @@ public final class UICollectionComponent: CollectionComponent {
     internal final let collectionViewLayout: UICollectionViewLayout
 
     fileprivate final let bridge: UICollectionViewBridge
-    
+
     fileprivate final let collectionViewWidthConstraint: NSLayoutConstraint
-    
+
     fileprivate final let collectionViewHeightConstraint: NSLayoutConstraint
 
     // DO NOT get an item component from the map directly, please use itemComponent(at:) instead.
     internal final var itemComponentCache: [IndexPath: Component]
-    
+
     public final func sizeForItem(at indexPath: IndexPath) -> CGSize {
-        
+
         return bridge.sizeForItemProvider(
             collectionViewLayout,
             indexPath
         )
-        
+
     }
-    
+
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     ///   - layout: The collection view layout.
@@ -49,179 +49,179 @@ public final class UICollectionComponent: CollectionComponent {
         self.contentMode = contentMode
 
         self.collectionViewLayout = layout
-        
+
         self.collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: collectionViewLayout
         )
 
         self.bridge = UICollectionViewBridge(collectionView: collectionView)
-        
+
         self.collectionViewWidthConstraint = collectionView.heightAnchor.constraint(equalToConstant: collectionView.bounds.width)
-        
+
         self.collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: collectionView.bounds.height)
-        
+
         self.itemComponentCache = [:]
-        
+
         self.prepare()
-        
+
     }
-    
+
     // MARK: Set Up
-    
+
     fileprivate final func prepare() {
-        
+
         prepareLayout()
-        
+
         collectionView.backgroundColor = .clear
-        
+
         collectionView.clipsToBounds = false
-        
+
         bridge.configureCellHandler = { [unowned self] cell, indexPath in
 
             let component = self.itemComponent(at: indexPath)
-        
+
             cell.contentView.frame.size = component.preferredContentSize
-            
+
             cell.frame.size = cell.contentView.frame.size
-            
+
             cell.contentView.wrapSubview(component.view)
 
         }
-        
+
         bridge.sizeForItemProvider = { [unowned self] layout, indexPath in
-            
+
             let component = self.itemComponent(at: indexPath)
-            
+
             component.render()
-            
+
             return component.preferredContentSize
-            
+
         }
-        
+
     }
-    
+
     fileprivate final func prepareLayout() {
-        
+
         collectionViewWidthConstraint.priority = UILayoutPriority(750.0)
-        
+
         collectionViewHeightConstraint.priority = UILayoutPriority(750.0)
-        
+
         let initialSize: CGSize
-        
+
         switch contentMode {
-            
+
         case let .fixed(size): initialSize = size
-            
+
         case let .automatic(estimatedSize): initialSize = estimatedSize
-            
+
         }
-        
+
         collectionView.frame.size = initialSize
 
     }
 
     // MARK: CollectionComponent
-    
+
     public final var numberOfSections: Int {
-        
+
         get { return bridge.numberOfSections }
-        
+
         set { bridge.numberOfSections = newValue }
-        
+
     }
-    
+
     public final func numberOfItemComponents(inSection section: Int) -> Int { return bridge.numberOfItemsProvider(section) }
-    
+
     public final func setNumberOfItemComponents(provider: @escaping NumberOfItemComponentsProvider) {
-        
+
         bridge.numberOfItemsProvider = { [unowned self] section in
-        
+
             return provider(
                 self,
                 section
             )
-        
+
         }
-        
+
     }
-    
+
     public final func itemComponent(at indexPath: IndexPath) -> Component {
-        
+
         if let provider = itemComponentCache[indexPath] { return provider }
         else {
-            
+
             guard
                 let provider = itemComponentProvider
             else { fatalError("Please make sure to set the provider with setItemComponent(provider:) firstly.") }
-            
+
             let itemComponent = provider(
                 self,
                 indexPath
             )
-            
+
             itemComponentCache[indexPath] = itemComponent
-            
+
             return itemComponent
-            
+
         }
-        
+
     }
-    
+
     private final var itemComponentProvider: ItemComponentProvider?
-    
+
     public final func setItemComponent(provider: @escaping ItemComponentProvider) { itemComponentProvider = provider }
-    
+
     // MARK: Component
 
     public final var contentMode: ComponentContentMode
 
     public final func render() {
-        
+
         itemComponentCache = [:]
-        
+
         renderLayout()
-        
+
     }
-    
+
     fileprivate final func renderLayout() {
-        
+
         let collectionViewConstraints = [
             collectionViewWidthConstraint,
             collectionViewHeightConstraint
         ]
-        
+
         NSLayoutConstraint.deactivate(collectionViewConstraints)
-        
+
         collectionViewLayout.invalidateLayout()
-        
+
         switch contentMode {
-            
+
         case let .fixed(size):
-            
+
             collectionView.frame.size = size
-            
+
             collectionView.reloadData()
-            
+
         case let .automatic(estimatedSize):
-            
+
             collectionView.frame.size = estimatedSize
-            
+
             collectionView.reloadData()
-            
+
             /// Reference: https://stackoverflow.com/questions/22861804/uicollectionview-cellforitematindexpath-is-nil
             collectionView.layoutIfNeeded()
-            
+
             collectionView.frame.size.height = collectionViewLayout.collectionViewContentSize.height
-            
+
         }
-        
+
         collectionViewWidthConstraint.constant = collectionView.frame.width
-        
+
         collectionViewHeightConstraint.constant = collectionView.frame.height
-        
+
         NSLayoutConstraint.activate(collectionViewConstraints)
-        
+
     }
 
     // MARK: ViewRenderable
@@ -229,5 +229,5 @@ public final class UICollectionComponent: CollectionComponent {
     public final var view: View { return collectionView }
 
     public final var preferredContentSize: CGSize { return collectionView.bounds.size }
-    
+
 }
