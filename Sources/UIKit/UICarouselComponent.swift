@@ -16,6 +16,8 @@ public final class UICarouselComponent: CollectionComponent {
     /// The base component.
     private final let collectionComponent: UICollectionComponent
 
+    private final var collectionView: UICollectionView { return collectionComponent.collectionView }
+
     private final let collectionViewFlowLayout: UICollectionViewFlowLayout
 
     public final var interitemSpacing: CGFloat {
@@ -23,6 +25,22 @@ public final class UICarouselComponent: CollectionComponent {
         get { return collectionViewFlowLayout.minimumLineSpacing }
 
         set { collectionViewFlowLayout.minimumLineSpacing = newValue }
+
+    }
+
+    public final var showsVerticalScrollIndicator: Bool {
+
+        get { return collectionView.showsVerticalScrollIndicator }
+
+        set { collectionView.showsVerticalScrollIndicator = newValue }
+
+    }
+
+    public final var showsHorizontalScrollIndicator: Bool {
+
+        get { return collectionView.showsHorizontalScrollIndicator }
+
+        set { collectionView.showsHorizontalScrollIndicator = newValue }
 
     }
 
@@ -81,7 +99,7 @@ public final class UICarouselComponent: CollectionComponent {
 
         collectionComponent.setItemComponent { [unowned self] _, indexPath in
 
-            let safeAreaRect = self.collectionComponent.collectionView.safeAreaRect
+            let safeAreaRect = self.collectionView.safeAreaRect
 
             let itemComponent = provider(
                 self,
@@ -137,7 +155,7 @@ public final class UICarouselComponent: CollectionComponent {
 
         }
 
-        collectionComponent.collectionView.frame.size = initialSize
+        collectionView.frame.size = initialSize
 
         collectionComponent.render()
 

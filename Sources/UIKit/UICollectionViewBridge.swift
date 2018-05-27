@@ -8,13 +8,13 @@
 
 // MARK: - UICollectionViewBridge
 
-public final class UICollectionViewBridge: NSObject {
+internal final class UICollectionViewBridge: NSObject {
 
     private final unowned let collectionView: UICollectionView
 
     private final let cellIdentifier = "UICollectionViewCell"
 
-    public init(collectionView: UICollectionView) {
+    internal init(collectionView: UICollectionView) {
 
         self.numberOfSections = 0
 
@@ -45,19 +45,19 @@ public final class UICollectionViewBridge: NSObject {
 
     }
 
-    public final var numberOfSections: Int
+    internal final var numberOfSections: Int
 
-    public typealias NumberOfItemsProvider = (_ section: Int) -> Int
+    internal typealias NumberOfItemsProvider = (_ section: Int) -> Int
 
-    public final var numberOfItemsProvider: NumberOfItemsProvider
+    internal final var numberOfItemsProvider: NumberOfItemsProvider
 
-    public typealias ConfigureCellHandler = (UICollectionViewCell, IndexPath) -> Void
+    internal typealias ConfigureCellHandler = (UICollectionViewCell, IndexPath) -> Void
 
-    public final var configureCellHandler: ConfigureCellHandler?
+    internal final var configureCellHandler: ConfigureCellHandler?
 
-    public typealias SizeForItemProvider = (UICollectionViewLayout, IndexPath) -> CGSize
+    internal typealias SizeForItemProvider = (UICollectionViewLayout, IndexPath) -> CGSize
 
-    public final var sizeForItemProvider: SizeForItemProvider
+    internal final var sizeForItemProvider: SizeForItemProvider
 
 }
 
@@ -65,15 +65,15 @@ public final class UICollectionViewBridge: NSObject {
 
 extension UICollectionViewBridge: UICollectionViewDataSource {
 
-    public final func numberOfSections(in collectionView: UICollectionView) -> Int { return numberOfSections }
+    internal final func numberOfSections(in collectionView: UICollectionView) -> Int { return numberOfSections }
 
-    public final func collectionView(
+    internal final func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     )
     -> Int { return numberOfItemsProvider(section) }
 
-    public final func collectionView(
+    internal final func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     )
@@ -101,7 +101,7 @@ extension UICollectionViewBridge: UICollectionViewDataSource {
 
 extension UICollectionViewBridge: UICollectionViewDelegateFlowLayout {
 
-    public final func collectionView(
+    internal final func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath

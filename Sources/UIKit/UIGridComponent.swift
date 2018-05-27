@@ -32,6 +32,8 @@ public final class UIGridComponent: CollectionComponent {
     /// The base component.
     private final let collectionComponent: UICollectionComponent
 
+    private final var collectionView: UICollectionView { return collectionComponent.collectionView }
+
     private final let collectionViewFlowLayout: UICollectionViewFlowLayout
 
     public final var grid: Grid
@@ -77,6 +79,22 @@ public final class UIGridComponent: CollectionComponent {
             }
 
         }
+
+    }
+
+    public final var showsVerticalScrollIndicator: Bool {
+
+        get { return collectionView.showsVerticalScrollIndicator }
+
+        set { collectionView.showsVerticalScrollIndicator = newValue }
+
+    }
+
+    public final var showsHorizontalScrollIndicator: Bool {
+
+        get { return collectionView.showsHorizontalScrollIndicator }
+
+        set { collectionView.showsHorizontalScrollIndicator = newValue }
 
     }
 
@@ -177,7 +195,7 @@ public final class UIGridComponent: CollectionComponent {
 
         }
 
-        collectionComponent.collectionView.frame.size = initialSize
+        collectionView.frame.size = initialSize
 
         cachedGridSize = calculateGridSize()
 
@@ -197,7 +215,7 @@ fileprivate extension UIGridComponent {
 
     fileprivate final func calculateGridSize() -> CGSize {
 
-        let safeAreaRect = collectionComponent.collectionView.safeAreaRect
+        let safeAreaRect = collectionView.safeAreaRect
 
         let columns = grid.columns
 

@@ -14,7 +14,7 @@
 /// The collection component overrides the content mode for each item component to fit the size calculated by the layout during the rendering.
 ///
 /// Please make sure to give a non-zero size for the list to properly render its content.
-public final class UICollectionComponent: CollectionComponent {
+internal final class UICollectionComponent: CollectionComponent {
 
     internal final let collectionView: UICollectionView
 
@@ -29,7 +29,7 @@ public final class UICollectionComponent: CollectionComponent {
     // DO NOT get an item component from the map directly, please use itemComponent(at:) instead.
     internal final var itemComponentCache: [IndexPath: Component]
 
-    public final func sizeForItem(at indexPath: IndexPath) -> CGSize {
+    internal final func sizeForItem(at indexPath: IndexPath) -> CGSize {
 
         return bridge.sizeForItemProvider(
             collectionViewLayout,
@@ -41,7 +41,7 @@ public final class UICollectionComponent: CollectionComponent {
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     ///   - layout: The collection view layout.
-    public init(
+    internal init(
         contentMode: ComponentContentMode = .automatic(estimatedSize: .zero),
         layout: UICollectionViewLayout
     ) {
@@ -123,7 +123,7 @@ public final class UICollectionComponent: CollectionComponent {
 
     // MARK: CollectionComponent
 
-    public final var numberOfSections: Int {
+    internal final var numberOfSections: Int {
 
         get { return bridge.numberOfSections }
 
@@ -131,9 +131,9 @@ public final class UICollectionComponent: CollectionComponent {
 
     }
 
-    public final func numberOfItemComponents(inSection section: Int) -> Int { return bridge.numberOfItemsProvider(section) }
+    internal final func numberOfItemComponents(inSection section: Int) -> Int { return bridge.numberOfItemsProvider(section) }
 
-    public final func setNumberOfItemComponents(provider: @escaping NumberOfItemComponentsProvider) {
+    internal final func setNumberOfItemComponents(provider: @escaping NumberOfItemComponentsProvider) {
 
         bridge.numberOfItemsProvider = { [unowned self] section in
 
@@ -146,7 +146,7 @@ public final class UICollectionComponent: CollectionComponent {
 
     }
 
-    public final func itemComponent(at indexPath: IndexPath) -> Component {
+    internal final func itemComponent(at indexPath: IndexPath) -> Component {
 
         if let provider = itemComponentCache[indexPath] { return provider }
         else {
@@ -170,13 +170,13 @@ public final class UICollectionComponent: CollectionComponent {
 
     private final var itemComponentProvider: ItemComponentProvider?
 
-    public final func setItemComponent(provider: @escaping ItemComponentProvider) { itemComponentProvider = provider }
+    internal final func setItemComponent(provider: @escaping ItemComponentProvider) { itemComponentProvider = provider }
 
     // MARK: Component
 
-    public final var contentMode: ComponentContentMode
+    internal final var contentMode: ComponentContentMode
 
-    public final func render() {
+    internal final func render() {
 
         itemComponentCache = [:]
 
@@ -226,8 +226,8 @@ public final class UICollectionComponent: CollectionComponent {
 
     // MARK: ViewRenderable
 
-    public final var view: View { return collectionView }
+    internal final var view: View { return collectionView }
 
-    public final var preferredContentSize: CGSize { return collectionView.bounds.size }
+    internal final var preferredContentSize: CGSize { return collectionView.bounds.size }
 
 }
