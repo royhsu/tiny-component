@@ -10,7 +10,6 @@
 		B070EBB620B96A5F00DAFB38 /* UICollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBB520B96A5F00DAFB38 /* UICollectionViewBridge.swift */; };
 		B070EBB820B96C1600DAFB38 /* UICollectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBB720B96C1600DAFB38 /* UICollectionComponent.swift */; };
 		B070EBBA20B96F0200DAFB38 /* UICollectionComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBB920B96F0200DAFB38 /* UICollectionComponentTests.swift */; };
-		B070EBBE20B98CA800DAFB38 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBBD20B98CA800DAFB38 /* Grid.swift */; };
 		B070EBC020B98CCE00DAFB38 /* UIGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBBF20B98CCE00DAFB38 /* UIGridComponent.swift */; };
 		B070EBC220B98E0000DAFB38 /* ScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */; };
 		B070EBC420B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */; };
@@ -48,7 +47,6 @@
 		B070EBB520B96A5F00DAFB38 /* UICollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewBridge.swift; sourceTree = "<group>"; };
 		B070EBB720B96C1600DAFB38 /* UICollectionComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionComponent.swift; sourceTree = "<group>"; };
 		B070EBB920B96F0200DAFB38 /* UICollectionComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionComponentTests.swift; sourceTree = "<group>"; };
-		B070EBBD20B98CA800DAFB38 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		B070EBBF20B98CCE00DAFB38 /* UIGridComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGridComponent.swift; sourceTree = "<group>"; };
 		B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirection.swift; sourceTree = "<group>"; };
 		B070EBC320B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SafeAreaRect.swift"; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				B0FE389E20B80C6500FB2E9A /* Component.swift */,
 				B0FE38A620B80E6600FB2E9A /* CollectionComponent.swift */,
 				B0FE38B820B8563D00FB2E9A /* ListComponent.swift */,
-				B070EBBD20B98CA800DAFB38 /* Grid.swift */,
 				B070EBC120B98E0000DAFB38 /* ScrollDirection.swift */,
 				B0FE388220B8068D00FB2E9A /* TinyComponent.h */,
 				B0FE388320B8068D00FB2E9A /* Info.plist */,
@@ -298,7 +295,6 @@
 				B070EBC620B9983A00DAFB38 /* UICarouselComponent.swift in Sources */,
 				B0FE38A320B80CB900FB2E9A /* UIView+View.swift in Sources */,
 				B0FE389D20B809C800FB2E9A /* ComponentContentMode.swift in Sources */,
-				B070EBBE20B98CA800DAFB38 /* Grid.swift in Sources */,
 				B070EBC020B98CCE00DAFB38 /* UIGridComponent.swift in Sources */,
 				B070EBC920BA563100DAFB38 /* UIBoxComponent.swift in Sources */,
 				B070EBC420B9910600DAFB38 /* UICollectionView+SafeAreaRect.swift in Sources */,

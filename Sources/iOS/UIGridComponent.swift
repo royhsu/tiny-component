@@ -38,7 +38,27 @@ public final class UIGridComponent: CollectionComponent {
 
     private final let collectionViewFlowLayout: UICollectionViewFlowLayout
 
-    public final var grid: Grid
+    /// The number of columns must be greater than or equal to 1.
+    public final var numberOfColumns: Int {
+
+        willSet {
+
+            if newValue < 1 { fatalError("The number of columns must be greater than or equal to 1.") }
+
+        }
+
+    }
+
+    /// The number of rows must be greater than or equal to 1.
+    public final var numberOfRows: Int {
+
+        willSet {
+
+            if newValue < 1 { fatalError("The number of rows must be greater than or equal to 1.") }
+
+        }
+
+    }
 
     public final var interitemSpacing: CGFloat {
 
@@ -115,10 +135,9 @@ public final class UIGridComponent: CollectionComponent {
             layout: collectionViewFlowLayout
         )
 
-        self.grid = Grid(
-            columns: 1,
-            rows: 1
-        )
+        self.numberOfColumns =  1
+
+        self.numberOfRows = 1
 
         self.prepare()
 
@@ -219,40 +238,36 @@ fileprivate extension UIGridComponent {
 
         let safeAreaRect = collectionView.safeAreaRect
 
-        let columns = grid.columns
-
-        let rows = grid.rows
-
         switch scrollDirection {
 
         case .vertical:
 
-            var spacingOfInteritems = CGFloat(columns - 1) * interitemSpacing
+            var spacingOfInteritems = CGFloat(numberOfColumns - 1) * interitemSpacing
 
             if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
 
-            var spacingOfLines = CGFloat(rows - 1) * lineSpacing
+            var spacingOfLines = CGFloat(numberOfRows - 1) * lineSpacing
 
             if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
 
             return CGSize(
-                width: (safeAreaRect.width - spacingOfInteritems) / CGFloat(columns),
-                height: (safeAreaRect.height - spacingOfLines) / CGFloat(rows)
+                width: (safeAreaRect.width - spacingOfInteritems) / CGFloat(numberOfColumns),
+                height: (safeAreaRect.height - spacingOfLines) / CGFloat(numberOfRows)
             )
 
         case .horizontal:
 
-            var spacingOfInteritems = CGFloat(rows - 1) * interitemSpacing
+            var spacingOfInteritems = CGFloat(numberOfRows - 1) * interitemSpacing
 
             if spacingOfInteritems < 0.0 { spacingOfInteritems = 0.0 }
 
-            var spacingOfLines = CGFloat(columns - 1) * lineSpacing
+            var spacingOfLines = CGFloat(numberOfColumns - 1) * lineSpacing
 
             if spacingOfLines < 0.0 { spacingOfLines = 0.0 }
 
             return CGSize(
-                width: (safeAreaRect.width - spacingOfLines) / CGFloat(columns),
-                height: (safeAreaRect.height - spacingOfInteritems) / CGFloat(rows)
+                width: (safeAreaRect.width - spacingOfLines) / CGFloat(numberOfColumns),
+                height: (safeAreaRect.height - spacingOfInteritems) / CGFloat(numberOfRows)
             )
 
         }

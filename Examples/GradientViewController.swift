@@ -30,10 +30,9 @@ public final class GradientViewController: UIViewController {
             )
         )
 
-        gridComponent.grid = Grid(
-            columns: 2,
-            rows: 3
-        )
+        gridComponent.numberOfColumns = 2
+
+        gridComponent.numberOfRows = 3
 
         gridComponent.scrollDirection = .horizontal
 
