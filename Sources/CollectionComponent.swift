@@ -8,6 +8,8 @@
 
 // MARK: - CollectionComponent
 
+import Foundation
+
 /// Grouping a bunch of item components by index path.
 public protocol CollectionComponent: Component {
 
