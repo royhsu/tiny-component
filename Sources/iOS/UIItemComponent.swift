@@ -148,18 +148,9 @@ public final class UIItemComponent<ItemView: UIView>: Component {
                     itemViewLeadingConstraint,
                     itemViewTrailingConstraint,
                     itemViewWidthConstraint,
-                    itemViewHeightConstraint
+                    itemViewHeightConstraint,
+                    itemViewBottomConstraint
                 ]
-            )
-
-            itemView.layoutIfNeeded()
-
-            itemView.frame.origin = .zero
-
-            view.frame.size = itemView.frame.size
-
-            NSLayoutConstraint.activate(
-                [ itemViewBottomConstraint ]
             )
 
         case let .automatic(estimatedSize):
