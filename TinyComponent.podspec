@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'TinyComponent'
-  spec.version = '0.1.3'
+  spec.version = '0.1.4'
   spec.license = 'MIT'
   spec.summary = 'Component-based Architecture: Making view composition fun and easy.'
   spec.homepage = 'https://github.com/royhsu/tiny-component'
