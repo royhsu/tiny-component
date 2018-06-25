@@ -27,13 +27,13 @@ extension AppDelegate: UIApplicationDelegate {
     )
     -> Bool {
 
-//        window.rootViewController = UINavigationController(
-//            rootViewController: GradientViewController()
-//        )
-
         window.rootViewController = UINavigationController(
-            rootViewController: ImageListViewController()
+            rootViewController: GradientViewController()
         )
+
+//        window.rootViewController = UINavigationController(
+//            rootViewController: ImageListViewController()
+//        )
 
         window.makeKeyAndVisible()
 

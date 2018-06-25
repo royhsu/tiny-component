@@ -30,14 +30,6 @@ public final class UICarouselComponent: CollectionComponent {
 
     }
 
-    public final var showsVerticalScrollIndicator: Bool {
-
-        get { return collectionView.showsVerticalScrollIndicator }
-
-        set { collectionView.showsVerticalScrollIndicator = newValue }
-
-    }
-
     public final var showsHorizontalScrollIndicator: Bool {
 
         get { return collectionView.showsHorizontalScrollIndicator }
