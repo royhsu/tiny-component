@@ -64,7 +64,7 @@ public final class UIListComponent: ListComponent {
 
         tableView.estimatedRowHeight = 0.0
 
-        bridge.configureCellHandler = { [unowned self] cell, indexPath in
+        bridge.configureCellHandler = { cell, indexPath in
 
             let component = self.itemComponent(at: indexPath)
 
@@ -76,7 +76,7 @@ public final class UIListComponent: ListComponent {
 
         }
 
-        bridge.heightForRowProvider = { [unowned self] indexPath in
+        bridge.heightForRowProvider = { indexPath in
 
             let initialSize: CGSize
 
@@ -160,7 +160,7 @@ public final class UIListComponent: ListComponent {
 
     public final func setNumberOfItemComponents(provider: @escaping NumberOfItemComponentsProvider) {
 
-        bridge.numberOfRowsProvider = { [unowned self] section in
+        bridge.numberOfRowsProvider = { section in
 
             return provider(
                 self,

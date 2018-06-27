@@ -79,7 +79,7 @@ internal final class UICollectionComponent: CollectionComponent {
 
         collectionView.clipsToBounds = false
 
-        bridge.configureCellHandler = { [unowned self] cell, indexPath in
+        bridge.configureCellHandler = { cell, indexPath in
 
             let component = self.itemComponent(at: indexPath)
 
@@ -91,7 +91,7 @@ internal final class UICollectionComponent: CollectionComponent {
 
         }
 
-        bridge.sizeForItemProvider = { [unowned self] layout, indexPath in
+        bridge.sizeForItemProvider = { _, indexPath in
 
             let component = self.itemComponent(at: indexPath)
 
@@ -137,7 +137,7 @@ internal final class UICollectionComponent: CollectionComponent {
 
     internal final func setNumberOfItemComponents(provider: @escaping NumberOfItemComponentsProvider) {
 
-        bridge.numberOfItemsProvider = { [unowned self] section in
+        bridge.numberOfItemsProvider = { section in
 
             return provider(
                 self,

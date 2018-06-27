@@ -179,7 +179,7 @@ public final class UIGridComponent: CollectionComponent {
 
     public final func setItemComponent(provider: @escaping ItemComponentProvider) {
 
-        collectionComponent.setItemComponent { [unowned self] _, indexPath in
+        collectionComponent.setItemComponent { _, indexPath in
 
             let itemComponent = provider(
                 self,
