@@ -12,7 +12,7 @@ import UIKit
 
 /// The default implementation of carousel layout component.
 ///
-/// Please note that the carousel component will override the content mode of item components by stretching the height of them to fit the parent.
+/// Please note that the carousel component will override the content mode of item components by stretching the height of them to fit the parent and calculating the width dynamically.
 public final class UICarouselComponent: CollectionComponent {
 
     /// The base component.
@@ -21,7 +21,7 @@ public final class UICarouselComponent: CollectionComponent {
     private final var collectionView: UICollectionView { return collectionComponent.collectionView }
 
     private final let collectionViewFlowLayout: UICollectionViewFlowLayout
-
+    
     public final var interitemSpacing: CGFloat {
 
         get { return collectionViewFlowLayout.minimumInteritemSpacing }
@@ -110,26 +110,27 @@ public final class UICarouselComponent: CollectionComponent {
                 indexPath
             )
 
-            let itemSize: CGSize
-
             switch itemComponent.contentMode {
-
+                
             case let .fixed(size):
-
-                itemSize = CGSize(
-                    width: size.width,
-                    height: safeAreaRect.height
+                
+                itemComponent.contentMode = .fixed(
+                    size: CGSize(
+                        width: size.width,
+                        height: safeAreaRect.height
+                    )
                 )
-
+                
             case let .automatic(estimatedSize):
-
-                itemSize = CGSize(
-                    width: estimatedSize.width,
-                    height: safeAreaRect.height
+                
+                itemComponent.contentMode = .automatic(
+                    estimatedSize: CGSize(
+                        width: estimatedSize.width,
+                        height: safeAreaRect.height
+                    )
                 )
+                
             }
-
-            itemComponent.contentMode = .fixed(size: itemSize)
 
             return itemComponent
 

@@ -31,6 +31,7 @@
 		B070EC6220BB896500DAFB38 /* UICollectionComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5C20BB896500DAFB38 /* UICollectionComponentTests.swift */; };
 		B070EC6320BB896500DAFB38 /* UIItemComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5D20BB896500DAFB38 /* UIItemComponentTests.swift */; };
 		B070EC6420BB896500DAFB38 /* ComponentContentModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5E20BB896500DAFB38 /* ComponentContentModeTests.swift */; };
+		B0F64C4220E3B2D40091DD1C /* UICarouselComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F64C4020E3B2C00091DD1C /* UICarouselComponentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		B070EC5D20BB896500DAFB38 /* UIItemComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIItemComponentTests.swift; sourceTree = "<group>"; };
 		B070EC5E20BB896500DAFB38 /* ComponentContentModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentContentModeTests.swift; sourceTree = "<group>"; };
 		B070EC5F20BB896500DAFB38 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0F64C4020E3B2C00091DD1C /* UICarouselComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICarouselComponentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				B070EC5A20BB896500DAFB38 /* UIBoxComponentTests.swift */,
 				B070EC5B20BB896500DAFB38 /* UIListComponentTests.swift */,
+				B0F64C4020E3B2C00091DD1C /* UICarouselComponentTests.swift */,
 				B070EC5C20BB896500DAFB38 /* UICollectionComponentTests.swift */,
 				B070EC5D20BB896500DAFB38 /* UIItemComponentTests.swift */,
 				B070EC5F20BB896500DAFB38 /* Info.plist */,
@@ -187,7 +190,6 @@
 				B070EC0A20BB884200DAFB38 /* Frameworks */,
 				B070EC0B20BB884200DAFB38 /* Headers */,
 				B070EC0C20BB884200DAFB38 /* Resources */,
-				B086A46420DA23E9002A648E /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -269,23 +271,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B086A46420DA23E9002A648E /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B070EC0920BB884200DAFB38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -318,6 +303,7 @@
 				B070EC6320BB896500DAFB38 /* UIItemComponentTests.swift in Sources */,
 				B070EC6020BB896500DAFB38 /* UIBoxComponentTests.swift in Sources */,
 				B070EC6420BB896500DAFB38 /* ComponentContentModeTests.swift in Sources */,
+				B0F64C4220E3B2D40091DD1C /* UICarouselComponentTests.swift in Sources */,
 				B070EC6120BB896500DAFB38 /* UIListComponentTests.swift in Sources */,
 				B070EC6220BB896500DAFB38 /* UICollectionComponentTests.swift in Sources */,
 			);
