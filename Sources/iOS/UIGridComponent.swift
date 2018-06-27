@@ -120,6 +120,14 @@ public final class UIGridComponent: CollectionComponent {
 
     }
 
+    public final var isPagingEnabled: Bool {
+
+        get { return collectionView.isPagingEnabled }
+
+        set { collectionView.isPagingEnabled = newValue }
+
+    }
+
     private final var cachedGridSize: CGSize = .zero
 
     /// - Parameters:

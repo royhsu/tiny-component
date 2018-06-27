@@ -27,6 +27,14 @@ public final class UIListComponent: ListComponent {
     // Note: DO NOT get an item component from the map directly, please use itemComponent(at:) instead.
     internal final var itemComponentCache: [IndexPath: Component]
 
+    public final var isPagingEnabled: Bool {
+
+        get { return tableView.isPagingEnabled }
+
+        set { tableView.isPagingEnabled = newValue }
+
+    }
+
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     public init(

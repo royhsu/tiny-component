@@ -38,6 +38,14 @@ public final class UICarouselComponent: CollectionComponent {
 
     }
 
+    public final var isPagingEnabled: Bool {
+
+        get { return collectionView.isPagingEnabled }
+
+        set { collectionView.isPagingEnabled = newValue }
+
+    }
+
     /// - Parameters:
     ///   - contentMode: The default mode is .automatic with zero value of estimated size. This will prevent the list rendering with empty content. Please make sure to give a non-zero size for the list to properly render its content.
     public init(
