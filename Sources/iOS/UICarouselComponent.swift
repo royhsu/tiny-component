@@ -24,9 +24,9 @@ public final class UICarouselComponent: CollectionComponent {
 
     public final var interitemSpacing: CGFloat {
 
-        get { return collectionViewFlowLayout.minimumLineSpacing }
+        get { return collectionViewFlowLayout.minimumInteritemSpacing }
 
-        set { collectionViewFlowLayout.minimumLineSpacing = newValue }
+        set { collectionViewFlowLayout.minimumInteritemSpacing = newValue }
 
     }
 
