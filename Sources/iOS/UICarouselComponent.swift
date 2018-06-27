@@ -71,6 +71,8 @@ public final class UICarouselComponent: CollectionComponent {
 
         collectionViewFlowLayout.sectionInset = .zero
 
+        numberOfSections = 1
+
     }
 
     // MARK: CollectionComponent

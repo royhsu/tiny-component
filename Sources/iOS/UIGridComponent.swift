@@ -159,6 +159,8 @@ public final class UIGridComponent: CollectionComponent {
 
         collectionViewFlowLayout.sectionInset = .zero
 
+        numberOfSections = 1
+
     }
 
     // MARK: CollectionComponent
