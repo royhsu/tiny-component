@@ -26,6 +26,7 @@
 		B070EC8F20BB8D3000DAFB38 /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC7A20BB8D3000DAFB38 /* DynamicColor+RGBA.swift */; };
 		B070EC9020BB8D3000DAFB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B070EC7B20BB8D3000DAFB38 /* LaunchScreen.storyboard */; };
 		B070EC9120BB8D3000DAFB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC7D20BB8D3000DAFB38 /* AppDelegate.swift */; };
+		B099868020E4C9E800A65BFF /* EmbededListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099867F20E4C9E800A65BFF /* EmbededListViewController.swift */; };
 		B0A5F74C20D9129F0050A234 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5F74B20D9129F0050A234 /* ImageListViewController.swift */; };
 		B0A5F74E20D913470050A234 /* UIImage+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5F74D20D913460050A234 /* UIImage+UIColor.swift */; };
 		B0B942DC20B91EB70006AC9B /* TinyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B942DB20B91EB70006AC9B /* TinyComponent.framework */; };
@@ -67,6 +68,7 @@
 		B070EC7C20BB8D3000DAFB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B070EC7D20BB8D3000DAFB38 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B070EC7E20BB8D3000DAFB38 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B099867F20E4C9E800A65BFF /* EmbededListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededListViewController.swift; sourceTree = "<group>"; };
 		B0A5F74B20D9129F0050A234 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		B0A5F74D20D913460050A234 /* UIImage+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+UIColor.swift"; sourceTree = "<group>"; };
 		B0B942C920B91DFC0006AC9B /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				B070EC6820BB8D3000DAFB38 /* DynamicGradient+Palette.swift */,
 				B070EC6920BB8D3000DAFB38 /* GradientViewController.swift */,
 				B0A5F74B20D9129F0050A234 /* ImageListViewController.swift */,
+				B099867F20E4C9E800A65BFF /* EmbededListViewController.swift */,
 				B070EC7D20BB8D3000DAFB38 /* AppDelegate.swift */,
 				B070EC6A20BB8D3000DAFB38 /* Assets.xcassets */,
 				B070EC7B20BB8D3000DAFB38 /* LaunchScreen.storyboard */,
@@ -241,6 +244,7 @@
 				B0A5F74E20D913470050A234 /* UIImage+UIColor.swift in Sources */,
 				B070EC8520BB8D3000DAFB38 /* Array.swift in Sources */,
 				B070EC8C20BB8D3000DAFB38 /* Utils.swift in Sources */,
+				B099868020E4C9E800A65BFF /* EmbededListViewController.swift in Sources */,
 				B0A5F74C20D9129F0050A234 /* ImageListViewController.swift in Sources */,
 				B070EC7F20BB8D3000DAFB38 /* DynamicGradient+Palette.swift in Sources */,
 				B070EC8820BB8D3000DAFB38 /* DynamicColor+XYZ.swift in Sources */,

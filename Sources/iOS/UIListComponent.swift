@@ -109,12 +109,13 @@ public final class UIListComponent: ListComponent {
                     )
                 )
 
-            case let .automatic(estimatedSize):
+            case .automatic:
 
+                // Bug: This is a temporary fix that make sure the height of estimated size is larger enough to calculate the actual height.
                 itemComponent.contentMode = .automatic(
                     estimatedSize: CGSize(
                         width: initialSize.width,
-                        height: estimatedSize.height
+                        height: 100.0
                     )
                 )
 

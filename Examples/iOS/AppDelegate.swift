@@ -27,8 +27,12 @@ extension AppDelegate: UIApplicationDelegate {
     )
     -> Bool {
 
+//        window.rootViewController = UINavigationController(
+//            rootViewController: GradientViewController()
+//        )
+        
         window.rootViewController = UINavigationController(
-            rootViewController: GradientViewController()
+            rootViewController: EmbededListViewController()
         )
 
 //        window.rootViewController = UINavigationController(
