@@ -25,12 +25,15 @@
 		B070EC5420BB892900DAFB38 /* UIListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC3220BB887600DAFB38 /* UIListComponent.swift */; };
 		B070EC5520BB892900DAFB38 /* UIGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC3320BB887600DAFB38 /* UIGridComponent.swift */; };
 		B070EC5620BB892900DAFB38 /* UICollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC3420BB887600DAFB38 /* UICollectionViewBridge.swift */; };
-		B070EC5720BB892900DAFB38 /* UIView+Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC3520BB887600DAFB38 /* UIView+Subview.swift */; };
 		B070EC6020BB896500DAFB38 /* UIBoxComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5A20BB896500DAFB38 /* UIBoxComponentTests.swift */; };
 		B070EC6120BB896500DAFB38 /* UIListComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5B20BB896500DAFB38 /* UIListComponentTests.swift */; };
 		B070EC6220BB896500DAFB38 /* UICollectionComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5C20BB896500DAFB38 /* UICollectionComponentTests.swift */; };
 		B070EC6320BB896500DAFB38 /* UIItemComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5D20BB896500DAFB38 /* UIItemComponentTests.swift */; };
 		B070EC6420BB896500DAFB38 /* ComponentContentModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B070EC5E20BB896500DAFB38 /* ComponentContentModeTests.swift */; };
+		B0EAF6FC2206954800AF815D /* TinyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAF6FB2206954800AF815D /* TinyKit.framework */; };
+		B0EAF7042206957500AF815D /* TinyCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAF7032206957500AF815D /* TinyCore.framework */; };
+		B0EAF7062206957500AF815D /* TinyStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAF7052206957500AF815D /* TinyStorage.framework */; };
+		B0EAF7082206957500AF815D /* TinyValidation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAF7072206957500AF815D /* TinyValidation.framework */; };
 		B0F64C4220E3B2D40091DD1C /* UICarouselComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F64C4020E3B2C00091DD1C /* UICarouselComponentTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +64,6 @@
 		B070EC3220BB887600DAFB38 /* UIListComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIListComponent.swift; sourceTree = "<group>"; };
 		B070EC3320BB887600DAFB38 /* UIGridComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGridComponent.swift; sourceTree = "<group>"; };
 		B070EC3420BB887600DAFB38 /* UICollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewBridge.swift; sourceTree = "<group>"; };
-		B070EC3520BB887600DAFB38 /* UIView+Subview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subview.swift"; sourceTree = "<group>"; };
 		B070EC3620BB887600DAFB38 /* ScrollDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDirection.swift; sourceTree = "<group>"; };
 		B070EC3720BB887600DAFB38 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		B070EC3820BB887600DAFB38 /* ComponentContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentContentMode.swift; sourceTree = "<group>"; };
@@ -72,6 +74,13 @@
 		B070EC5D20BB896500DAFB38 /* UIItemComponentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIItemComponentTests.swift; sourceTree = "<group>"; };
 		B070EC5E20BB896500DAFB38 /* ComponentContentModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentContentModeTests.swift; sourceTree = "<group>"; };
 		B070EC5F20BB896500DAFB38 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0EAF6FB2206954800AF815D /* TinyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EAF6FD2206955500AF815D /* TinyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EAF6FF2206955800AF815D /* TinyStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EAF7012206955B00AF815D /* TinyValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EAF7032206957500AF815D /* TinyCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EAF7052206957500AF815D /* TinyStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EAF7072206957500AF815D /* TinyValidation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyValidation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F64C4020E3B2C00091DD1C /* UICarouselComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICarouselComponentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +89,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EAF7042206957500AF815D /* TinyCore.framework in Frameworks */,
+				B0EAF7062206957500AF815D /* TinyStorage.framework in Frameworks */,
+				B0EAF7082206957500AF815D /* TinyValidation.framework in Frameworks */,
+				B0EAF6FC2206954800AF815D /* TinyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +135,6 @@
 				B070EC3220BB887600DAFB38 /* UIListComponent.swift */,
 				B070EC3320BB887600DAFB38 /* UIGridComponent.swift */,
 				B070EC3420BB887600DAFB38 /* UICollectionViewBridge.swift */,
-				B070EC3520BB887600DAFB38 /* UIView+Subview.swift */,
 				B070EC3920BB887600DAFB38 /* Info.plist */,
 			);
 			path = iOS;
@@ -150,12 +162,27 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		B0EAF6FA2206954800AF815D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0EAF7032206957500AF815D /* TinyCore.framework */,
+				B0EAF7052206957500AF815D /* TinyStorage.framework */,
+				B0EAF7072206957500AF815D /* TinyValidation.framework */,
+				B0EAF7012206955B00AF815D /* TinyValidation.framework */,
+				B0EAF6FF2206955800AF815D /* TinyStorage.framework */,
+				B0EAF6FD2206955500AF815D /* TinyCore.framework */,
+				B0EAF6FB2206954800AF815D /* TinyKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0FE386C20B8064200FB2E9A = {
 			isa = PBXGroup;
 			children = (
 				B070EC2520BB887600DAFB38 /* Sources */,
 				B070EC5820BB896500DAFB38 /* Tests */,
 				B0FE387720B8064200FB2E9A /* Products */,
+				B0EAF6FA2206954800AF815D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,7 +307,6 @@
 				B070EC4D20BB892900DAFB38 /* UIBoxComponent.swift in Sources */,
 				B070EC5520BB892900DAFB38 /* UIGridComponent.swift in Sources */,
 				B070EC3B20BB887600DAFB38 /* ViewRenderable.swift in Sources */,
-				B070EC5720BB892900DAFB38 /* UIView+Subview.swift in Sources */,
 				B070EC5420BB892900DAFB38 /* UIListComponent.swift in Sources */,
 				B070EC4B20BB887600DAFB38 /* ComponentContentMode.swift in Sources */,
 				B070EC5220BB892900DAFB38 /* UICollectionView+SafeAreaRect.swift in Sources */,

@@ -8,7 +8,7 @@
 
 // MARK: - UIListComponent
 
-import UIKit
+import TinyKit
 
 /// The default implementation of list layout component.
 ///

@@ -8,7 +8,7 @@
 
 // MARK: - UICollectionComponent
 
-import UIKit
+import TinyKit
 
 /// The default implementation of collection layout component.
 ///
